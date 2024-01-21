@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #008170;
+  border-radius: 10px;
+  height: 40px;
+  a {
+    color: #fff;
+    font-size: 16px;
+  }
+  a:hover {
+  }
+}

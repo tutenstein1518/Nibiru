@@ -1,0 +1,33 @@
+.saler {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .saler_personal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+  }
+
+  img.saler_img {
+    width: 50px;
+    border-radius: 100%;
+    margin-left: 20px;
+  }
+
+  .date {
+    color: #817e7e;
+    font-family: monospace;
+    font-size: 10px;
+  }
+
+  .saler_desc {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #575757;
+  }
+}

@@ -1,0 +1,15 @@
+.root {
+  background-color: #008170;
+  border-radius: 10px;
+  height: 45px;
+  width: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

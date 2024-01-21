@@ -1,0 +1,15 @@
+.root {
+  padding-top: 40px;
+  .cart {
+    width: 265px;
+    height: 360px;
+    background-color: #008170;
+    border: 2px solid #008170;
+
+    .cover {
+      display: "block";
+      height: 260px;
+      width: "100%";
+    }
+  }
+}

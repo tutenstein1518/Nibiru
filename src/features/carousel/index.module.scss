@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  overflow: hidden;
+  padding-right: 40px;
+
+  .carousel {
+    border-radius: 10px;
+
+    img.carousel_img {
+      border-radius: 10px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
