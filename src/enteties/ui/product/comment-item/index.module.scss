@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+.comment_block {
+  border: 1px solid #4096ff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: default;
+  margin-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  .comment_block__user_block {
+    display: flex;
+    align-items: center;
+
+    img.user_block__logo {
+      width: 60px;
+      height: 60px;
+      padding-right: 5px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+    .user_block__name {
+      font-size: 18px;
+      color: #232d3f;
+    }
+  }
+
+  .comment_block__comments {
+    padding-bottom: 10px;
+    color: #9b9a9a;
+
+    .users_rate img {
+      height: 10px;
+    }
+  }
+  .comment_block__reactions {
+    border-top: 1px solid #4096ff;
+
+    .block_reactions {
+      font-size: 18px;
+      padding-top: 5px;
+      display: flex;
+      justify-content: space-around;
+
+      // icons
+      .is_liked_icon {
+        color: #4096ff;
+      }
+      .is_disliked_icon {
+        color: #ff4d4f;
+      }
+      .default_icon {
+        color: #000;
+      }
+    }
+  }
+}

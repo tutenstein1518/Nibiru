@@ -6,13 +6,13 @@ import { DislikeOutlined, LikeOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 // redux
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "../../features/hooks";
-import { getComments } from "../store/reducers/comments";
-import { RootState } from "../store";
+import { useAppDispatch } from "../../../../features/hooks";
+import { getComments } from "../../../../shared/store/reducers/comments";
+import { RootState } from "../../../../shared/store";
 // react-router-dom
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Rate } from "antd";
-import { NoComments } from "./no_comments";
+import { NoComments } from "../../../../shared/product_comments/no_comments";
 
 export const Comment = () => {
   // like&dislike
@@ -56,7 +56,9 @@ export const Comment = () => {
                 className={index.user_block__logo}
               />
               <div className={index.user_block__name}>
-                <h4>{comm.user_name}</h4>
+                <NavLink to={`/user/${comm.user_id}`}>
+                  <h4>{comm.user_name}</h4>
+                </NavLink>
               </div>
             </div>
             <div className={index.comment_block__comments}>

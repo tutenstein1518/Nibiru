@@ -1,13 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layouts } from "../routs-layouts";
 // consts
-import { ABOUT, AUTH, FORM, HOME, PRODUCT } from "../../shared/consts";
+import { ABOUT, AUTH, FORM, HOME, PRODUCT, USER } from "../../shared/consts";
 // pages
 import { Home } from "../../pages/home";
 import { Form } from "../../pages/form";
 import { Autentification } from "../../pages/autentification";
 import { AboutUs } from "../../pages/about";
 import { Product } from "../../pages/product";
+import { User } from "../../pages/user";
 
 export const Routs = () => {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ export const Routs = () => {
         {
           path: ABOUT,
           element: <AboutUs />,
+        },
+        {
+          path: USER,
+          element: <User />,
         },
       ],
     },

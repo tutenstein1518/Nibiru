@@ -17,6 +17,7 @@ import { ProductContent } from "../../widgets/product/product-content";
 export const Product = () => {
   //state
   const items = useAppSelector(cartsSelector);
+
   let { id } = useParams();
   const element = items.filter((i) => i.id === Number(id))[0] || {};
   return (

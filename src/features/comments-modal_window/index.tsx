@@ -1,11 +1,10 @@
 // ui
 import { Button, Modal } from "antd";
-import index from "./index.module.scss";
 // react
 import { useState } from "react";
 
 // components
-import { Comment } from "./comment";
+import { Comment } from "../../enteties/ui/product/comment-item/comment";
 
 export const UiComments = () => {
   // modal
@@ -29,7 +28,7 @@ export const UiComments = () => {
   };
 
   return (
-    <div className={index.root}>
+    <div>
       <Button type="primary" onClick={showModal}>
         Открыть комментарии
       </Button>
@@ -38,11 +37,7 @@ export const UiComments = () => {
         title="Комментарии"
         onOk={handleOk}
         onCancel={handleCancel}
-        footer={[
-          <Button key="back" onClick={handleCancel}>
-            Оставить коментарий
-          </Button>,
-        ]}
+        footer={[]}
       >
         <Comment />
       </Modal>

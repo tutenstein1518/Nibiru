@@ -2,7 +2,7 @@
 import { Button } from "antd";
 // scss
 import index from "./index.module.scss";
-import { UiComments } from "../../../product_comments";
+import { UiComments } from "../../../../features/comments-modal_window";
 export const ButtonsPanel = () => {
   return (
     <div className={index.root}>
