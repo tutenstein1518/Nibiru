@@ -9,8 +9,13 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../features/hooks";
 import { getComments } from "../store/reducers/comments";
 import { RootState } from "../store";
+// react-router-dom
+import { useParams } from "react-router-dom";
+import { Rate } from "antd";
+import { NoComments } from "./no_comments";
 
 export const Comment = () => {
+  // like&dislike
   const [isLiked, setIsLiked] = useState(false);
   const [isDisliked, setIsDisliked] = useState(false);
 
@@ -32,39 +37,52 @@ export const Comment = () => {
   }, []);
   // state
   const comments = useSelector((state: RootState) => state.comments.comments);
+  // extract id
+  let { id } = useParams();
+  // filter by id
+  const filteredComments = comments.filter(
+    (comment) => comment.product_id == id
+  );
+
   return (
     <div>
-      {comments?.map((comm, i) => (
-        <div className={index.comment_block} key={i}>
-          <div className={index.comment_block__user_block}>
-            <img
-              src={comm.user_avatar}
-              alt="#"
-              className={index.user_block__logo}
-            />
-            <div className={index.user_block__name}>
-              <h4>{comm.user_name}</h4>
+      {filteredComments.map((comm, i) => (
+        <div>
+          <div className={index.comment_block} key={i}>
+            <div className={index.comment_block__user_block}>
+              <img
+                src={comm.user_avatar}
+                alt="#"
+                className={index.user_block__logo}
+              />
+              <div className={index.user_block__name}>
+                <h4>{comm.user_name}</h4>
+              </div>
             </div>
-          </div>
-          <div className={index.comment_block__comments}>
-            {comm.user_comment}
-          </div>
-          <div className={index.comment_block__reactions}>
-            <div className={index.block_reactions}>
-              <LikeOutlined
-                className={isLiked ? index.is_liked_icon : index.default_icon}
-                onClick={handleLike}
-              />
-              <DislikeOutlined
-                className={
-                  isDisliked ? index.is_disliked_icon : index.default_icon
-                }
-                onClick={handleDislike}
-              />
+            <div className={index.comment_block__comments}>
+              {comm.user_comment}
+            </div>
+            <div className={index.users_rate}>
+              <Rate allowHalf disabled defaultValue={comm.users_rate} />
+            </div>
+            <div className={index.comment_block__reactions}>
+              <div className={index.block_reactions}>
+                <LikeOutlined
+                  className={isLiked ? index.is_liked_icon : index.default_icon}
+                  onClick={handleLike}
+                />
+                <DislikeOutlined
+                  className={
+                    isDisliked ? index.is_disliked_icon : index.default_icon
+                  }
+                  onClick={handleDislike}
+                />
+              </div>
             </div>
           </div>
         </div>
       ))}
+      {filteredComments.length === 0 && <NoComments />}
     </div>
   );
 };

@@ -31,11 +31,11 @@ export const UiComments = () => {
   return (
     <div className={index.root}>
       <Button type="primary" onClick={showModal}>
-        Открыть коментарии
+        Открыть комментарии
       </Button>
       <Modal
         open={open}
-        title="Title"
+        title="Комментарии"
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[

@@ -4,4 +4,5 @@ export interface IComments {
   user_name: string;
   user_avatar: string;
   user_comment: string;
+  users_rate: number;
 }
