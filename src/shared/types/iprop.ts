@@ -1,5 +1,5 @@
 import { ICart } from "./cart";
 
 export interface IProp {
-  element: ICart;
+  element: ICart | null;
 }

@@ -71,6 +71,10 @@ export const cartsSelector = (state: RootState) => {
   return filteredCarts;
 };
 
+export const productDetail = (state: RootState) => {
+  return state.carts.productDetail;
+};
+
 export const loadingSelector = (state: RootState) => {
   return state.carts.loading;
 };

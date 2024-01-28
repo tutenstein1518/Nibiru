@@ -14,7 +14,6 @@ import { PostAvatar } from "../../../enteties/ui/user-posts/user-avatar";
 import { PostUserName } from "../../../enteties/ui/user-posts/user-name";
 import { Post } from "../user-post";
 import {
-  CommentOutlined,
   DislikeOutlined,
   EnterOutlined,
   LikeOutlined,

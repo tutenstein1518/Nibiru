@@ -13,6 +13,7 @@ interface IState extends ICartFilters {
   carts: ICart[];
   loading: boolean;
   error: string;
+  productDetail: null | ICart;
 }
 const initialState = {
   count: 0,
@@ -26,14 +27,27 @@ const initialState = {
   byPrice: "",
   byRating: null,
   byInput: "",
+  productDetail: null,
 } as unknown as IState;
 
-export const getCarts = createAsyncThunk("nibiru", async (offset: number) => {
-  const response = await fetch("http://localhost:1703/nibiru");
-  const data = (await response.json()) as { count: number; results: ICart[] };
-  const sliceResults = data.results.slice(offset, offset + 10);
-  return { count: data.count, results: sliceResults };
-});
+export const getCarts = createAsyncThunk(
+  "getCarts",
+  async (offset?: number) => {
+    const response = await fetch("http://localhost:1703/nibiru");
+    const data = (await response.json()) as { count: number; results: ICart[] };
+    const sliceResults = data.results.slice(offset, (offset || 0) + 10);
+    return { count: data.count, results: sliceResults };
+  }
+);
+
+export const getProductsDetail = createAsyncThunk(
+  "getProductsDetail",
+  async (id: string) => {
+    const response = await fetch("http://localhost:1703/nibiru");
+    const data = (await response.json()) as { count: number; results: ICart[] };
+    return data.results.filter((i) => i.id === Number(id))[0] || null;
+  }
+);
 
 export const cartsSlice = createSlice({
   name: "carts",
@@ -74,6 +88,9 @@ export const cartsSlice = createSlice({
         state.error = "";
         state.count = count;
         state.carts = [...state.carts, ...results];
+      })
+      .addCase(getProductsDetail.fulfilled, (state, action) => {
+        state.productDetail = action.payload;
       });
   },
 });

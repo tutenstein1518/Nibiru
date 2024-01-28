@@ -14,8 +14,8 @@ export const ProductBreadcrumbs = ({ element }: IProp) => {
         cursor: "default",
       }}
     >
-      <Breadcrumb.Item>{element.category}</Breadcrumb.Item>
-      <Breadcrumb.Item>{element.subcategory}</Breadcrumb.Item>
+      <Breadcrumb.Item>{element?.category}</Breadcrumb.Item>
+      <Breadcrumb.Item>{element?.subcategory}</Breadcrumb.Item>
       {/* breadCrumb */}
     </Breadcrumb>
   );

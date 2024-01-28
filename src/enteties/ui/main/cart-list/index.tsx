@@ -10,6 +10,7 @@ import {
   cartsSelector,
   getCarts,
   countSelector,
+  reset,
 } from "../../../../shared/store/reducers/carts";
 // react
 import { useEffect } from "react";
@@ -22,7 +23,10 @@ export const CartList = () => {
   const items = useAppSelector(cartsSelector);
   const count = useAppSelector(countSelector);
   useEffect(() => {
-    dispatch(getCarts(0));
+    dispatch(getCarts());
+    return () => {
+      dispatch(reset());
+    };
   }, []);
   const next = () => {
     dispatch(getCarts(items.length));

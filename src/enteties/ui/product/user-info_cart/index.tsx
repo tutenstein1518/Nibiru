@@ -11,10 +11,10 @@ export const UserCart = ({ element }: IProp) => {
     <div className={index.root}>
       <div className={index.user_info}>
         <div className={index.user}>
-          <h3>{element.saller}</h3>
-          <img src={element.img_avatar} alt="#" />
+          <h3>{element?.saller}</h3>
+          <img src={element?.img_avatar} alt="#" />
         </div>
-        <Rate disabled allowHalf defaultValue={element.rating} />
+        <Rate disabled allowHalf defaultValue={element?.rating} />
       </div>
 
       <ButtonsPanel />

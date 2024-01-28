@@ -1,6 +1,6 @@
 import { CommentOutlined } from "@ant-design/icons";
 import { Dropdown, Input, Menu } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const { TextArea } = Input;
 

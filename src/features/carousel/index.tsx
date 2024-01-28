@@ -23,21 +23,21 @@ export const ProductCarousel = ({ element }: IProp) => {
         <div>
           <img
             className={index.carousel_img}
-            src={element.img_slider_1}
+            src={element?.img_slider_1}
             style={contentStyle}
           ></img>
         </div>
         <div>
           <img
             className={index.carousel_img}
-            src={element.img_slider_2}
+            src={element?.img_slider_2}
             style={contentStyle}
           ></img>
         </div>
         <div>
           <img
             className={index.carousel_img}
-            src={element.img_slider_3}
+            src={element?.img_slider_3}
             style={contentStyle}
           ></img>
         </div>

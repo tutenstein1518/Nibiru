@@ -9,10 +9,13 @@ import { ProductCarousel } from "../../../features/carousel";
 import { ProductInfo } from "../../../enteties/ui/product/product-info";
 import { UserCart } from "../../../enteties/ui/product/user-info_cart/index";
 import { ProductBreadcrumbs } from "../../../enteties/ui/product/breadcrumbs";
+import { productDetail } from "../../../shared/store/reducers/carts/selectors";
+import { useAppSelector } from "../../../features/hooks";
 
 const { Content } = Layout;
 
-export const ProductContent = ({ element }: IProp) => {
+export const ProductContent = () => {
+  const element = useAppSelector(productDetail);
   return (
     <Content className={index.root}>
       <ProductBreadcrumbs element={element} />
